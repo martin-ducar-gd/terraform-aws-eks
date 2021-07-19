@@ -20,6 +20,8 @@ module "node_groups" {
     kubernetes_config_map.aws_auth,
     aws_iam_role_policy_attachment.workers_AmazonEKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.workers_AmazonEKS_CNI_Policy,
-    aws_iam_role_policy_attachment.workers_AmazonEC2ContainerRegistryReadOnly
+    aws_iam_role_policy_attachment.workers_AmazonEC2ContainerRegistryReadOnly,
+    null_resource.aws_vpc_cni_delete,
+    time_sleep.wait_90_seconds
   ]
 }
